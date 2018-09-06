@@ -32,10 +32,7 @@ public class DynamicIntArray {
         boolean flag = false;
 
         for(int i = 0; i < this.array.length; i++) {
-            if (this.array[i] == n) {
-                flag = true;
-                continue;
-            }
+            if (this.array[i] == n) flag = true;
             else if (flag) newArray[i - 1] = this.array[i];
             else newArray[i] = this.array[i];
         }
