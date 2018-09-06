@@ -25,6 +25,23 @@ public class DynamicIntArray {
         this.array = newArray;
     }
 
+    public void remove(int n) {
+
+        int newSize = this.array.length - 1;
+        int[] newArray = new int[newSize];
+        boolean flag = false;
+
+        for(int i = 0; i < this.array.length; i++) {
+            if (this.array[i] == n) {
+                flag = true;
+                continue;
+            }
+            else if (flag) newArray[i - 1] = this.array[i];
+            else newArray[i] = this.array[i];
+        }
+        this.array = newArray;
+    }
+
     public String toString() {
 
         StringBuilder string = new StringBuilder();
