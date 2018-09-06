@@ -39,6 +39,28 @@ public class DynamicIntArray {
         this.array = newArray;
     }
 
+    public void insert(int index, int n) {
+
+        int newSize = this.array.length + 1;
+        int[] newArray = new int[newSize];
+        boolean flag = false;
+
+        if(index > newSize - 1) index = newSize - 1;
+
+        for (int i = 0; i < newArray.length; i++) {
+
+            if (i == index) {
+                flag = true;
+                newArray[i] = n;
+            }
+            else if (flag) {
+                newArray[i] = this.array[i - 1];
+            }
+            else newArray[i] = this.array[i];
+        }
+        this.array = newArray;
+    }
+
     public String toString() {
 
         StringBuilder string = new StringBuilder();
