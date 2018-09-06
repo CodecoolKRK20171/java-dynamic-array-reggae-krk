@@ -53,9 +53,7 @@ public class DynamicIntArray {
                 flag = true;
                 newArray[i] = n;
             }
-            else if (flag) {
-                newArray[i] = this.array[i - 1];
-            }
+            else if (flag) newArray[i] = this.array[i - 1];
             else newArray[i] = this.array[i];
         }
         this.array = newArray;
